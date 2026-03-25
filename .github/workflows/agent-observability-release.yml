@@ -1,4 +1,4 @@
-name: build-and-publish
+name: agent-observability-release
 
 on:
   push:
