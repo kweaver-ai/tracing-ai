@@ -1,0 +1,36 @@
+name: otelcol-chart-release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'otelcol-contribute-chart/**'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish-ghcr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.14.4
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Package chart
+        run: helm package otelcol-contribute-chart/charts/otelcol-contrib --destination .artifacts
+
+      - name: Push chart to GHCR
+        run: |
+          CHART_PACKAGE=$(ls .artifacts/otelcol-contrib-*.tgz)
+          helm push "$CHART_PACKAGE" oci://ghcr.io/${{ github.repository_owner }}/charts
