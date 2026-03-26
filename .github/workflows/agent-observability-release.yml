@@ -46,6 +46,11 @@ jobs:
             VERSION="${BASE_VERSION}-${SANITIZED_BRANCH}.${SHORT_SHA}"
           fi
 
+          echo "Base version: ${BASE_VERSION}"
+          echo "Git ref name: ${REF_NAME}"
+          echo "Short SHA: ${SHORT_SHA}"
+          echo "Resolved version: ${VERSION}"
+
           echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
           echo "image=${{ env.SWR_REGISTRY }}/${{ env.SWR_ORGANIZATION }}/${{ env.REGISTRY_IMAGE_NAME }}:${VERSION}" >> "${GITHUB_OUTPUT}"
 

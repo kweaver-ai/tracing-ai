@@ -42,6 +42,11 @@ jobs:
             VERSION="${BASE_VERSION}-${SANITIZED_BRANCH}.${SHORT_SHA}"
           fi
 
+          echo "Base version: ${BASE_VERSION}"
+          echo "Git ref name: ${REF_NAME}"
+          echo "Short SHA: ${SHORT_SHA}"
+          echo "Resolved version: ${VERSION}"
+
           echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
 
   publish-ghcr:
