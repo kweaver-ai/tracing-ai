@@ -23,8 +23,8 @@ service:
   port: 8080
 
 ingress:
-  enabled: false
-  className: ""
+  enabled: true
+  className: class-443
   annotations: {}
   host: ""
   paths:
