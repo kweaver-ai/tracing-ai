@@ -52,7 +52,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Build a term filter automatically using gen_ai.conversation_id.keyword
+      description: Build a term filter automatically using attributes.gen_ai.conversation.id.keyword
         and return the original OpenSearch response body.
       parameters:
       - description: Conversation ID

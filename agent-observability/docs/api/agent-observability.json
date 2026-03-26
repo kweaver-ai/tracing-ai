@@ -62,7 +62,7 @@
         },
         "/api/v1/traces/by-conversation": {
             "get": {
-                "description": "Build a term filter automatically using gen_ai.conversation_id.keyword and return the original OpenSearch response body.",
+                "description": "Build a term filter automatically using attributes.gen_ai.conversation.id.keyword and return the original OpenSearch response body.",
                 "consumes": [
                     "application/json"
                 ],

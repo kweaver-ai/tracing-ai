@@ -80,7 +80,7 @@ func (h *TraceHandler) SearchTraces(w http.ResponseWriter, r *http.Request) {
 
 // SearchTracesByConversationID godoc
 // @Summary Search traces by conversation ID
-// @Description Build a term filter automatically using gen_ai.conversation_id.keyword and return the original OpenSearch response body.
+// @Description Build a term filter automatically using attributes.gen_ai.conversation.id.keyword and return the original OpenSearch response body.
 // @Tags traces
 // @Accept json
 // @Produce json
@@ -115,7 +115,7 @@ func (h *TraceHandler) SearchTracesByConversationID(w http.ResponseWriter, r *ht
 				"filter": []map[string]any{
 					{
 						"term": map[string]string{
-							"gen_ai.conversation.id.keyword": conversationID,
+							"attributes.gen_ai.conversation.id.keyword": conversationID,
 						},
 					},
 				},
