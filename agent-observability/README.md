@@ -3,8 +3,8 @@
 基于参考项目 `agent-factory` 的六边形架构实现的 Agent Trace 查询服务。
 
 当前提供：
-- Trace 原始 DSL 查询接口：`POST /api/v1/traces/_search`
-- Conversation 维度包装查询接口：`GET /api/v1/traces/by-conversation?conversation_id=...`
+- Trace 原始 DSL 查询接口：`POST /api/agent-observability/v1/traces/_search`
+- Conversation 维度包装查询接口：`GET /api/agent-observability/v1/traces/by-conversation?conversation_id=...`
 - OpenSearch 查询客户端
 - Swagger 文档生成
 - Docker 镜像构建
@@ -34,8 +34,8 @@ make view-swag
 服务启动后可访问：
 
 ```text
-http://localhost:8080/swagger/swagger.json
-http://localhost:8080/swagger/swagger.yaml
+http://localhost:8080/api/agent-observability/v1/swagger/swagger.json
+http://localhost:8080/api/agent-observability/v1/swagger/swagger.yaml
 ```
 
 ## Docker

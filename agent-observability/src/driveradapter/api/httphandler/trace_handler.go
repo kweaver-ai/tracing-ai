@@ -28,7 +28,7 @@ func NewTraceHandler(traceQueryService *tracesvc.TraceQueryService) *TraceHandle
 // @Failure 400 {object} rdto.ErrorResponse
 // @Failure 405 {object} rdto.ErrorResponse
 // @Failure 504 {object} rdto.ErrorResponse
-// @Router /api/v1/traces/_search [post]
+// @Router /api/agent-observability/v1/traces/_search [post]
 func (h *TraceHandler) SearchTraces(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		writeJSON(w, http.StatusMethodNotAllowed, rdto.ErrorResponse{
@@ -90,7 +90,7 @@ func (h *TraceHandler) SearchTraces(w http.ResponseWriter, r *http.Request) {
 // @Failure 405 {object} rdto.ErrorResponse
 // @Failure 500 {object} rdto.ErrorResponse
 // @Failure 504 {object} rdto.ErrorResponse
-// @Router /api/v1/traces/by-conversation [get]
+// @Router /api/agent-observability/v1/traces/by-conversation [get]
 func (h *TraceHandler) SearchTracesByConversationID(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		writeJSON(w, http.StatusMethodNotAllowed, rdto.ErrorResponse{

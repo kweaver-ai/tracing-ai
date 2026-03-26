@@ -28,7 +28,7 @@ ingress:
   annotations: {}
   host: ""
   paths:
-    - /
+    - /api/agent-observability/v1
   tls: []
 
 resources:

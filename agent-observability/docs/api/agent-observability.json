@@ -6,9 +6,9 @@
         "contact": {},
         "version": "1.0"
     },
-    "basePath": "/",
+    "basePath": "/api/agent-observability/v1",
     "paths": {
-        "/api/v1/traces/_search": {
+        "/api/agent-observability/v1/traces/_search": {
             "post": {
                 "description": "Proxy raw OpenSearch DSL to the configured trace index and return the original OpenSearch response body.",
                 "consumes": [
@@ -60,7 +60,7 @@
                 }
             }
         },
-        "/api/v1/traces/by-conversation": {
+        "/api/agent-observability/v1/traces/by-conversation": {
             "get": {
                 "description": "Build a term filter automatically using attributes.gen_ai.conversation.id.keyword and return the original OpenSearch response body.",
                 "consumes": [

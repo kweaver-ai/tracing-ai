@@ -1,4 +1,4 @@
-basePath: /
+basePath: /api/agent-observability/v1
 definitions:
   rdto.ErrorResponse:
     properties:
@@ -13,7 +13,7 @@ info:
   title: Agent Observability API
   version: "1.0"
 paths:
-  /api/v1/traces/_search:
+  /api/agent-observability/v1/traces/_search:
     post:
       consumes:
       - application/json
@@ -48,7 +48,7 @@ paths:
       summary: Search traces with raw OpenSearch DSL
       tags:
       - traces
-  /api/v1/traces/by-conversation:
+  /api/agent-observability/v1/traces/by-conversation:
     get:
       consumes:
       - application/json

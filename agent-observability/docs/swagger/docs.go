@@ -16,7 +16,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/v1/traces/_search": {
+        "/api/agent-observability/v1/traces/_search": {
             "post": {
                 "description": "Proxy raw OpenSearch DSL to the configured trace index and return the original OpenSearch response body.",
                 "consumes": [
@@ -68,7 +68,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/traces/by-conversation": {
+        "/api/agent-observability/v1/traces/by-conversation": {
             "get": {
                 "description": "Build a term filter automatically using attributes.gen_ai.conversation.id.keyword and return the original OpenSearch response body.",
                 "consumes": [
@@ -144,7 +144,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "",
-	BasePath:         "/",
+	BasePath:         "/api/agent-observability/v1",
 	Schemes:          []string{},
 	Title:            "Agent Observability API",
 	Description:      "APIs for querying agent traces from OpenSearch.",

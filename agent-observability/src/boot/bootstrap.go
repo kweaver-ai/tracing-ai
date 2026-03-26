@@ -18,10 +18,12 @@ type App struct {
 	server *httpserver.Server
 }
 
+const APIBasePath = "/api/agent-observability/v1"
+
 func NewApp() *App {
 	httpServerConfig := conf.NewHTTPServerConfig()
 	openSearchConfig := conf.NewOpenSearchConfig()
-	docs.SwaggerInfo.BasePath = "/"
+	docs.SwaggerInfo.BasePath = APIBasePath
 
 	openSearchClient := opensearch.New(
 		openSearchConfig.Endpoint,
@@ -37,10 +39,10 @@ func NewApp() *App {
 	traceHandler := httphandler.NewTraceHandler(traceQueryService)
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/api/v1/traces/_search", traceHandler.SearchTraces)
-	mux.HandleFunc("/api/v1/traces/by-conversation", traceHandler.SearchTracesByConversationID)
-	mux.Handle("/swagger/", httpSwagger.Handler(
-		httpSwagger.URL("/swagger/doc.json"),
+	mux.HandleFunc(APIBasePath+"/traces/_search", traceHandler.SearchTraces)
+	mux.HandleFunc(APIBasePath+"/traces/by-conversation", traceHandler.SearchTracesByConversationID)
+	mux.Handle(APIBasePath+"/swagger/", httpSwagger.Handler(
+		httpSwagger.URL(APIBasePath+"/swagger/doc.json"),
 	))
 
 	return &App{

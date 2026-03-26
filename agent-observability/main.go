@@ -13,7 +13,7 @@ import (
 // @title Agent Observability API
 // @version 1.0
 // @description APIs for querying agent traces from OpenSearch.
-// @BasePath /
+// @BasePath /api/agent-observability/v1
 func main() {
 	app := boot.NewApp()
 
