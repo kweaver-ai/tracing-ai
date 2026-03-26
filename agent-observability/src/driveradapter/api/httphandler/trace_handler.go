@@ -115,7 +115,7 @@ func (h *TraceHandler) SearchTracesByConversationID(w http.ResponseWriter, r *ht
 				"filter": []map[string]any{
 					{
 						"term": map[string]string{
-							"gen_ai.conversation_id.keyword": conversationID,
+							"gen_ai.conversation.id.keyword": conversationID,
 						},
 					},
 				},
