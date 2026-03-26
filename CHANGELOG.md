@@ -1,0 +1,20 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.1.0] - 2026-03-25
+
+Initial project release.
+
+### Added
+
+- Added the `agent-observability` service for querying agent traces from OpenSearch.
+- Added trace query APIs for raw DSL search and conversation-based lookup, with generated Swagger documentation.
+- Added Docker, Helm, and GitHub Actions workflows for building and releasing `agent-observability`.
+- Added the `otelcol-contribute-chart` Helm chart for deploying OpenTelemetry Collector Contrib on Kubernetes.
+- Added OTLP ingestion and OpenSearch export defaults in the collector chart to support trace and log pipelines.
+- Added repository-level English and Chinese README documents describing the Tracing AI architecture, capabilities, and quick start flow.
+
+### Documentation
+
+- Added product and implementation documents for the Agent tracing system under `agent-observability/docs/`, including PRD, design, API schema, and Swagger assets.

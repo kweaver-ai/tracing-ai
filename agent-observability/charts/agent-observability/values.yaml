@@ -22,6 +22,15 @@ service:
   type: ClusterIP
   port: 8080
 
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  host: ""
+  paths:
+    - /
+  tls: []
+
 resources:
   limits:
     cpu: 500m
@@ -36,7 +45,7 @@ affinity: {}
 
 opensearch:
   endpoint: http://opensearch-read.resource.svc.cluster.local:9200
-  traceIndex: ss4o_traces-default-namespace
+  traceIndex: ss4o_traces-default-anyshare
   auth:
     enabled: false
     username: ""
