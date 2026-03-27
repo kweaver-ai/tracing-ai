@@ -110,6 +110,7 @@ func (h *TraceHandler) SearchTracesByConversationID(w http.ResponseWriter, r *ht
 	}
 
 	query, err := json.Marshal(map[string]any{
+		"size": 1000,
 		"query": map[string]any{
 			"bool": map[string]any{
 				"filter": []map[string]any{
