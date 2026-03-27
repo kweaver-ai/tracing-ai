@@ -55,7 +55,7 @@ swr.cn-east-3.myhuaweicloud.com/kweaver-ai/agent-observability:local
 也可以覆盖：
 
 ```bash
-make docker-build IMAGE=swr.cn-east-3.myhuaweicloud.com/kweaver-ai/agent-observability:v0.1.0
+make docker-build IMAGE=swr.cn-east-3.myhuaweicloud.com/kweaver-ai/agent-observability:v0.1.1
 ```
 
 ## Helm
@@ -83,7 +83,7 @@ make helm-package
 ```bash
 helm upgrade --install agent-observability charts/agent-observability \
   --set image.repository=swr.cn-east-3.myhuaweicloud.com/kweaver-ai/agent-observability \
-  --set image.tag=0.1.0 \
+  --set image.tag=0.1.1 \
   --set opensearch.endpoint=http://opensearch-cluster-master:9200 \
   --set opensearch.auth.enabled=false \
   -n observability --create-namespace
@@ -94,7 +94,7 @@ helm upgrade --install agent-observability charts/agent-observability \
 ```bash
 helm upgrade --install agent-observability charts/agent-observability \
   --set image.repository=swr.cn-east-3.myhuaweicloud.com/kweaver-ai/agent-observability \
-  --set image.tag=0.1.0 \
+  --set image.tag=0.1.1 \
   --set opensearch.endpoint=http://opensearch-cluster-master:9200 \
   --set opensearch.auth.enabled=true \
   --set opensearch.auth.username=your-username \

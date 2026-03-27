@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2026-03-27
+
+### Improvements
+
+- Increased the default result size limit to `1000` for the conversation-based trace search API so a single request can return more matching traces.
+
 ## [0.1.0] - 2026-03-25
 
 Initial project release.
